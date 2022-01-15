@@ -4,9 +4,10 @@ import Form from './components/Forms/Form'
 
 import {useDispatch} from 'react-redux'
 import {getPosts} from './actions/posts'
-import {Container, AppBar, Typography, Grow, Grid} from "@material-ui/core"
-import Instaverse from './images/Instaverse4.png'
+import {Container, Grow, Grid} from "@material-ui/core"
+
 import useStyles from './styles'
+import { Navbar } from './components/Navbar/Navbar'
 const App = () => {
   const classes = useStyles();
   const dispatch = useDispatch()
@@ -19,10 +20,7 @@ const App = () => {
 
   return (
     <Container maxWidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">Instaverse</Typography>
-        <img className={classes.image} src={Instaverse} alt="instaverse" height="60" />
-      </AppBar>
+      <Navbar/>
       <Grow in>
         <Container>
           <Grid className={classes.mainContainer} container direction="column-reverse" justifyContent="space-between" alignItems='stretch' spacing={4}>
