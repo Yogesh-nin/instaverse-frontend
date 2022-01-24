@@ -3,13 +3,13 @@ import { Avatar, Paper, Typography, Button, Container, Grid, TextField} from '@m
 import useStyles from './Styles'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Input from './Input'
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {signin, signup} from '../../actions/auth'
 import {useDispatch} from 'react-redux'
 const initialState = {firstName:"", lastName:"", email:"", password:"", confirmPassword:""}
 const Auth = () => {
     const classes = useStyles()
-    const history = useHistory()
+    const history = useNavigate()
     const dispatch = useDispatch()
     const [formData, setFormData] = useState(initialState)
     const [showPassword, setShowPassword] = useState(false)
@@ -18,10 +18,10 @@ const Auth = () => {
         e.preventDefault()
         
         if(isSignUp){
-            dispatch(signp(formData, history))
+            dispatch(signup(formData, history))
         }
         else{
-            dispatch(sigin(formData, history))
+            dispatch(signin(formData, history))
         }
     }
 
