@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseUrl: 'https://localhost:5000'})
+const API = axios.create({ baseUrl: 'https://instaverse-r4ki.onrender.com'})
 
 API.interceptors.request.use((req)=>{
     if (localStorage.getItem('profile')){
